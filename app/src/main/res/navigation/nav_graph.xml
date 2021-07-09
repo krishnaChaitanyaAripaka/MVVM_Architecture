@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/topicListFragment">
+
+    <fragment
+        android:id="@+id/topicListFragment"
+        android:name="com.chaitu.topic.topic.ui.TopicListFragment"
+        android:label="@string/topic_list_fragment_label"
+        tools:layout="@layout/fragment_topic_list">
+        <action
+            android:id="@+id/action_TopicListFragment_to_topicDetailFragment"
+            app:destination="@id/topicDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topicDetailFragment"
+        android:name="com.chaitu.topic.topic.ui.TopicDetailsFragment"
+        android:label="@string/topic_details_fragment_label"
+        tools:layout="@layout/fragment_topic_detail">
+        <argument
+            android:name="topic"
+            app:argType="com.chaitu.topic.topic.data.model.Topic" />
+    </fragment>
+
+</navigation>
